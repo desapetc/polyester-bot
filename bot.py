@@ -123,6 +123,9 @@ def defaults_from_env() -> dict[str, str]:
     return out
 
 
+CSV_DEFAULT_COLUMNS = ("name", "api_key_id", "api_private_key", "account_id")
+
+
 def load_configs() -> list[Config]:
     defaults = defaults_from_env()
     default_path = HERE / "accounts.csv"
@@ -137,8 +140,11 @@ def load_configs() -> list[Config]:
             # Excel in some locales saves with ";" instead of ",".
             delimiter = max(",;\t", key=header.count)
             # Blank cells mean "use the .env default".
+            # The header row is optional: without one, columns are read in order
+            # name, api_key_id, api_private_key, account_id.
+            fieldnames = None if "api_key_id" in header else list(CSV_DEFAULT_COLUMNS)
             entries = [{k.strip(): v.strip() for k, v in row.items() if k and v and v.strip()}
-                       for row in csv.DictReader(f, delimiter=delimiter)]
+                       for row in csv.DictReader(f, fieldnames=fieldnames, delimiter=delimiter)]
         entries = [e for e in entries if e]
     elif path.exists():
         data = json.loads(path.read_text(encoding="utf-8"))

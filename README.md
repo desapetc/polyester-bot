@@ -35,6 +35,14 @@ Sheets. Satu baris untuk satu akun:
 
 Waktu membuat API key: aktifkan **Spot trading** dan izinkan market **BTC-USDT**.
 
+Baris judul boleh tidak ditulis. Kalau tidak ada, kolom dibaca berurutan:
+`name,api_key_id,api_private_key,account_id`. Contoh isi minimal (bisa diedit pakai
+Notepad atau editor MobaXterm):
+```
+akun1,ak_xxx,private_key_64_karakter,ACCOUNTID1
+akun2,ak_yyy,private_key_64_karakter,ACCOUNTID2
+```
+
 Simpan sebagai CSV (pemisah koma atau titik koma dua-duanya bisa). Kalau
 `accounts.csv` ada, file itu yang dipakai. Kalau tidak ada, bot memakai `accounts.json`.
 
