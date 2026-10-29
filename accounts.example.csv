@@ -1,0 +1,4 @@
+name,api_key_id,api_private_key,account_id,max_slippage_bps,interval_sec,max_trades,stop_below_usdt,enabled
+akun1,ak_xxxxxxxx,64-char-hex-private-key,ACCOUNTID1,100,,,,
+akun2,ak_xxxxxxxx,64-char-hex-private-key,ACCOUNTID2,150,10,,100,
+akun3,ak_xxxxxxxx,64-char-hex-private-key,ACCOUNTID3,,,,,0

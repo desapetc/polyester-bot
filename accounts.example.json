@@ -1,0 +1,27 @@
+{
+  "accounts": [
+    {
+      "name": "akun1",
+      "api_key_id": "ak_...",
+      "api_private_key": "64-char-hex...",
+      "account_id": "...",
+      "max_slippage_bps": 50
+    },
+    {
+      "name": "akun2",
+      "api_key_id": "ak_...",
+      "api_private_key": "64-char-hex...",
+      "account_id": "...",
+      "max_slippage_bps": 150,
+      "interval_sec": 45,
+      "stop_below_usdt": 100
+    },
+    {
+      "name": "akun3",
+      "enabled": false,
+      "api_key_id": "",
+      "api_private_key": "",
+      "account_id": ""
+    }
+  ]
+}

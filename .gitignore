@@ -1,0 +1,9 @@
+# Secrets: never commit real accounts or settings
+accounts.csv
+accounts.json
+.env
+# Runtime
+.venv/
+__pycache__/
+logs/
+bot.pid
